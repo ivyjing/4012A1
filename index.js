@@ -1,43 +1,3 @@
-// const sum = (num1, num2) => {
-//     return num1 + num2;
-// }
-// const result = sum(2, 3);
-// console.log(result);
-
-
-
-/*
-const fs = require('fs');
-const generateFile = () => {
-    try {
-        fs.writeFileSync('data.txt', 'Hi, this file was made with Node');
-    } catch (err) {
-        console.log(err);
-    }
-}
-generateFile();
-
-
-
-const http = require('http');
-http.createServer(function (req, res) {
-    res.write('Server started. Hi!!!!');
-    res.end();
-}).listen(8080);
-
-
-
-
-
-const myModule = require('./my-module');
-
-const date = myModule();
-
-console.log(date);
-*/
-
-
-
 //requiring express
 const express = require('express');
 
@@ -49,19 +9,48 @@ const port = 9000;
 
 // API / urls
 app.get('/', (req, res) => {
-    res.send("Hi from the express server!");
+    res.send("Hi from the express server! Please go to localhost:9000/api/penguins or /bears");
 });
 
-app.get('/api/cats', (req, res) => {
+app.get('/api/penguins', (req, res) => {
 
     //call to db
 
     //return dummy data
-    const cats = ["British Shorthair", "Ragdoll", "Russian Blue"];
+    const penguins = ["Live almost exclusively in the southern hemisphere", 
+    "The largest living species is the emperor penguin", 
+    "Penguins evolved to fly underwater",
+    "A penguin’s thick feathers aren’t the only way this bird stays warm",
+    "Penguins live in many locations and habitats",
+    "Penguin feet are adapted to walk long distances",
+    "Many male penguins gift female penguins with rocks in order to woo them",
+    "Penguin is one of the most streamlined animals in the world",
+    "Penguins poop every 20 minutes",
+    "Penguins are expert divers"];
     
     //sending a response should be in JSON
-    res.send(JSON.stringify(cats));
+    res.send(JSON.stringify(penguins));
 }); //this part for A1
+
+app.get('/api/bears', (req, res) => {
+
+    //call to db
+
+    //return dummy data
+    const bears = ["Pandas Have an Extra Bone Just for Eating", 
+    "Sloth Bears Use Their Lips Like a Vacuum", 
+    "Brown Bears Are the Most Widespread",
+    "'Grolar' and 'Pizzly' Bears Are Appearing",
+    "Black Bears Are Not Always Black",
+    "White Bears Have Cultural Significance",
+    "Panda Babies Are Shockingly Small",
+    "Polar Bears Are Marine Mammals",
+    "Only 1 Bear Species Lives in the Southern Hemisphere",
+    "Sun Bears Are (Falsely) Thought To Have Medicinal Properties"];
+    
+    //sending a response should be in JSON
+    res.send(JSON.stringify(bears));
+});
 
 
 //running the express http server on the port we specified
