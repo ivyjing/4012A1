@@ -46,7 +46,8 @@ app.get('/api/bears', (req, res) => {
     "Panda Babies Are Shockingly Small",
     "Polar Bears Are Marine Mammals",
     "Only 1 Bear Species Lives in the Southern Hemisphere",
-    "Sun Bears Are (Falsely) Thought To Have Medicinal Properties"];
+    "Sun Bears Are (Falsely) Thought To Have Medicinal Properties",
+    "Bears see in color and have good close-up vision"];
     
     //sending a response should be in JSON
     res.send(JSON.stringify(bears));
